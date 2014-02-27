@@ -1,9 +1,10 @@
 #/bin/bash -x
-DF=`cat /root/ShellCodes/loop.txt`
-#echo "$DF"
-for i in $DF
+SOURCE=`cat /root/ShellCodes/loop.txt`
+DEST=/backup/
+echo "$SOURCE"
+for i in $SOURCE
 do
-	ping $i
+	tar -zcpvf /tmp/boot.tar.gz $i 
 done
 exit 0
 
